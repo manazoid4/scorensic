@@ -20,7 +20,7 @@ uv run scorensic check my-tasks.csv --model qwen3 --model llama3.2              
 uv run scorensic check my-tasks.csv --endpoint https://api.example.com/v1 --model x --key-env MY_API_KEY
 ```
 
-The bundled `examples/business/invoices.csv` is a short, made-up starter sheet. Ready-made UK business workload packs are on the roadmap.
+The bundled `examples/business/invoices.csv` is a short, made-up starter sheet. First ready-made pack: [UK complaints handling](packs/uk-complaints/) (54 tasks; spotting complaints, what the customer wants, references, escalation, vulnerability, FCA deadlines).
 
 ## For eval builders: check the grader
 

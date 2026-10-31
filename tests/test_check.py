@@ -78,3 +78,10 @@ def test_cli_writes_card(endpoint, tmp_path):
     assert main(["check", str(SHEET), "--endpoint", endpoint, "--model", "fake-model", "--out", str(tmp_path)]) == 0
     page = (tmp_path / "invoices-card.html").read_text(encoding="utf-8")
     assert "4 out of 8 right" in page and "stayed on this network" in page
+
+
+def test_uk_complaints_pack_marking_is_sound():
+    pack = Path(__file__).resolve().parents[1] / "packs" / "uk-complaints" / "pack.csv"
+    tasks = load_sheet(pack)
+    caught, total, problems = self_check(tasks)
+    assert len(tasks) == 54 and caught == total and problems == []
