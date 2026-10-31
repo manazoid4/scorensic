@@ -1,0 +1,302 @@
+{
+  "tool": "scorensic",
+  "version": "0.1.0",
+  "generated_at": "2026-10-31T19:35:31+00:00",
+  "eval": {
+    "name": "inspect_evals-boolq-prefix",
+    "description": "inspect_evals boolq scorer pattern(r\"(Yes|No).?\\Z\") at commit ac481c7a7b4fb05d6befdfea59b47fc61b839a4f",
+    "path": "C:\\Users\\Maz\\repos\\maz-eval-integrity\\validation\\inspect_yesno\\boolq-prefix",
+    "spec_sha256": "563ecdcbab0287ab1074d50fcc16a90a38d1d56f00b5f28f55b5bfc3b84f1ab1",
+    "tasks_sha256": "7e44f3d73b48558bda6d842a4ec1dac35fc18f7b6ff87930d0594220c36ddf8b",
+    "grader_sha256": {
+      "grader.py": "6a1f59a54a6df850e0e2d7d5b655f3d27e4cfadec5e3a5a9aa85aafb8be46932"
+    }
+  },
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 12
+  },
+  "config": {
+    "repeats": 3,
+    "processes": 2,
+    "timeout_s": 60,
+    "pass_threshold": 1.0,
+    "equivalent_transforms": [
+      "trailing_newline"
+    ],
+    "agent_visible": [],
+    "task_filter": null
+  },
+  "summary": {
+    "tasks": 4,
+    "probes": 56,
+    "grader_calls": 336,
+    "findings": 12,
+    "by_check": {
+      "rejects_valid_answer": 12
+    },
+    "by_severity": {
+      "medium": 12
+    },
+    "runtime_s": 13.191
+  },
+  "findings": [
+    {
+      "id": "2b39ba66a79d",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "0-yes",
+      "title": "Grader rejects a valid answer (valid_alternative)",
+      "explanation": "The output '**YES!!**' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "valid_alternative",
+        "output": "**YES!!**",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 0-yes"
+    },
+    {
+      "id": "2b39ba66a79d",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "0-yes",
+      "title": "Grader rejects a valid answer (valid_alternative)",
+      "explanation": "The output ' Yes\\n' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "valid_alternative",
+        "output": " Yes\n",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 0-yes"
+    },
+    {
+      "id": "0a65b3c7876d",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "0-yes",
+      "title": "Grader rejects a valid answer (equivalent_trailing_newline)",
+      "explanation": "The output 'Yes\\n' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "equivalent_trailing_newline",
+        "output": "Yes\n",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 0-yes"
+    },
+    {
+      "id": "a7f2206baf21",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "1-no",
+      "title": "Grader rejects a valid answer (valid_alternative)",
+      "explanation": "The output '**NO!!**' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "valid_alternative",
+        "output": "**NO!!**",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 1-no"
+    },
+    {
+      "id": "a7f2206baf21",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "1-no",
+      "title": "Grader rejects a valid answer (valid_alternative)",
+      "explanation": "The output ' No\\n' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "valid_alternative",
+        "output": " No\n",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 1-no"
+    },
+    {
+      "id": "f3b958df2fb4",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "1-no",
+      "title": "Grader rejects a valid answer (equivalent_trailing_newline)",
+      "explanation": "The output 'No\\n' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "equivalent_trailing_newline",
+        "output": "No\n",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 1-no"
+    },
+    {
+      "id": "bff5cfed4e4c",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "2-yes",
+      "title": "Grader rejects a valid answer (valid_alternative)",
+      "explanation": "The output '**YES!!**' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "valid_alternative",
+        "output": "**YES!!**",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 2-yes"
+    },
+    {
+      "id": "bff5cfed4e4c",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "2-yes",
+      "title": "Grader rejects a valid answer (valid_alternative)",
+      "explanation": "The output ' Yes\\n' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "valid_alternative",
+        "output": " Yes\n",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 2-yes"
+    },
+    {
+      "id": "0c4d01d63be1",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "2-yes",
+      "title": "Grader rejects a valid answer (equivalent_trailing_newline)",
+      "explanation": "The output 'Yes\\n' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "equivalent_trailing_newline",
+        "output": "Yes\n",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 2-yes"
+    },
+    {
+      "id": "c743feb718a1",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "3-no",
+      "title": "Grader rejects a valid answer (valid_alternative)",
+      "explanation": "The output '**NO!!**' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "valid_alternative",
+        "output": "**NO!!**",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 3-no"
+    },
+    {
+      "id": "c743feb718a1",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "3-no",
+      "title": "Grader rejects a valid answer (valid_alternative)",
+      "explanation": "The output ' No\\n' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "valid_alternative",
+        "output": " No\n",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 3-no"
+    },
+    {
+      "id": "c4aea795c373",
+      "check": "rejects_valid_answer",
+      "severity": "medium",
+      "confidence": "high",
+      "task_id": "3-no",
+      "title": "Grader rejects a valid answer (equivalent_trailing_newline)",
+      "explanation": "The output 'No\\n' should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.",
+      "evidence": {
+        "probe_kind": "equivalent_trailing_newline",
+        "output": "No\n",
+        "expected": "pass",
+        "score": 0.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.",
+      "reproduce": "scorensic audit boolq-prefix --task 3-no"
+    }
+  ],
+  "skipped": [
+    {
+      "check": "answer_leak",
+      "task_id": "0-yes",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "1-no",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "2-yes",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "3-no",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    }
+  ],
+  "limitations": [
+    "Probes are generic. A grader can pass every probe and still be wrong on inputs no probe covers.",
+    "Mutant and hedged-answer probes assume a single correct answer; for open-ended tasks treat them as prompts to look, not proof.",
+    "Answer-leak search is a verbatim text match over agent_visible files; encoded, paraphrased or git-history leaks are not detected.",
+    "Python graders run in a separate process with a timeout. That is not a security sandbox: only audit graders you trust."
+  ]
+}

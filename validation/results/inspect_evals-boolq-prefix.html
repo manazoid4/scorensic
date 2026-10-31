@@ -1,0 +1,219 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eval integrity report: inspect_evals-boolq-prefix</title>
+<style>
+body{font:16px/1.55 system-ui,sans-serif;max-width:860px;margin:0 auto;padding:24px 16px;color:#1f2928}
+code,pre{font-family:ui-monospace,Consolas,monospace;font-size:.88em} pre{white-space:pre-wrap;background:#f4f5f1;padding:12px;border-radius:6px}
+.f{border:1px solid #d8dbd3;border-left-width:6px;border-radius:8px;padding:4px 16px;margin:14px 0}
+.high{border-left-color:#b3261e} .medium{border-left-color:#c77700} .low{border-left-color:#5d6b66}
+.sev{font:700 .72rem ui-monospace,monospace;text-transform:uppercase;letter-spacing:.06em}
+.meta{color:#58615f;font-size:.9rem}
+</style></head><body>
+<h1>Eval integrity report</h1>
+<p class="meta">inspect_evals-boolq-prefix &middot; scorensic 0.1.0 &middot; 2026-10-31T19:35:31+00:00</p>
+<p>inspect_evals boolq scorer pattern(r&quot;(Yes|No).?\Z&quot;) at commit ac481c7a7b4fb05d6befdfea59b47fc61b839a4f</p>
+<h2>Summary</h2>
+<p>4 task(s), 56 probe(s), 336 grader call(s), 12 finding(s) in 13.191s.
+This is not a score of the benchmark. Each finding below is a specific input on which the grader behaved differently from what the task says it should.</p>
+<ul><li><code>rejects_valid_answer</code>: 12</li></ul>
+<h2>Findings</h2>
+<section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (valid_alternative)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>0-yes</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27;**YES!!**&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 0-yes</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;valid_alternative&quot;,
+  &quot;output&quot;: &quot;**YES!!**&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (valid_alternative)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>0-yes</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27; Yes\n&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 0-yes</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;valid_alternative&quot;,
+  &quot;output&quot;: &quot; Yes\n&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (equivalent_trailing_newline)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>0-yes</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27;Yes\n&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 0-yes</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;equivalent_trailing_newline&quot;,
+  &quot;output&quot;: &quot;Yes\n&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (valid_alternative)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>1-no</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27;**NO!!**&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 1-no</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;valid_alternative&quot;,
+  &quot;output&quot;: &quot;**NO!!**&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (valid_alternative)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>1-no</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27; No\n&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 1-no</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;valid_alternative&quot;,
+  &quot;output&quot;: &quot; No\n&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (equivalent_trailing_newline)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>1-no</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27;No\n&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 1-no</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;equivalent_trailing_newline&quot;,
+  &quot;output&quot;: &quot;No\n&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (valid_alternative)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>2-yes</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27;**YES!!**&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 2-yes</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;valid_alternative&quot;,
+  &quot;output&quot;: &quot;**YES!!**&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (valid_alternative)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>2-yes</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27; Yes\n&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 2-yes</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;valid_alternative&quot;,
+  &quot;output&quot;: &quot; Yes\n&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (equivalent_trailing_newline)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>2-yes</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27;Yes\n&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 2-yes</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;equivalent_trailing_newline&quot;,
+  &quot;output&quot;: &quot;Yes\n&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (valid_alternative)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>3-no</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27;**NO!!**&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 3-no</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;valid_alternative&quot;,
+  &quot;output&quot;: &quot;**NO!!**&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (valid_alternative)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>3-no</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27; No\n&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 3-no</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;valid_alternative&quot;,
+  &quot;output&quot;: &quot; No\n&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section><section class="f medium">
+<h3><span class="sev">medium</span> Grader rejects a valid answer (equivalent_trailing_newline)</h3>
+<p><b>Check:</b> <code>rejects_valid_answer</code> &middot; <b>Task:</b> <code>3-no</code> &middot; <b>Confidence:</b> high</p>
+<p>The output &#x27;No\n&#x27; should be accepted but scored 0.0 (threshold 1.0) on all 6 runs.</p>
+<p><b>Fix:</b> Normalise formatting (whitespace, case, numeric form) before comparing, or list accepted alternatives explicitly.</p>
+<p><b>Reproduce:</b> <code>scorensic audit boolq-prefix --task 3-no</code></p>
+<details><summary>Evidence</summary><pre>{
+  &quot;probe_kind&quot;: &quot;equivalent_trailing_newline&quot;,
+  &quot;output&quot;: &quot;No\n&quot;,
+  &quot;expected&quot;: &quot;pass&quot;,
+  &quot;score&quot;: 0.0,
+  &quot;pass_threshold&quot;: 1.0,
+  &quot;runs&quot;: 6
+}</pre></details>
+</section>
+<h2>Skipped checks</h2><ul><li>answer_leak / 0-yes: reference shorter than 4 characters; a text search would be meaningless</li><li>answer_leak / 1-no: reference shorter than 4 characters; a text search would be meaningless</li><li>answer_leak / 2-yes: reference shorter than 4 characters; a text search would be meaningless</li><li>answer_leak / 3-no: reference shorter than 4 characters; a text search would be meaningless</li></ul>
+<h2>Limitations</h2><ul><li>Probes are generic. A grader can pass every probe and still be wrong on inputs no probe covers.</li><li>Mutant and hedged-answer probes assume a single correct answer; for open-ended tasks treat them as prompts to look, not proof.</li><li>Answer-leak search is a verbatim text match over agent_visible files; encoded, paraphrased or git-history leaks are not detected.</li><li>Python graders run in a separate process with a timeout. That is not a security sandbox: only audit graders you trust.</li></ul>
+<h2>Provenance</h2><pre>{
+  &quot;eval&quot;: {
+    &quot;name&quot;: &quot;inspect_evals-boolq-prefix&quot;,
+    &quot;description&quot;: &quot;inspect_evals boolq scorer pattern(r\&quot;(Yes|No).?\\Z\&quot;) at commit ac481c7a7b4fb05d6befdfea59b47fc61b839a4f&quot;,
+    &quot;path&quot;: &quot;C:\\Users\\Maz\\repos\\maz-eval-integrity\\validation\\inspect_yesno\\boolq-prefix&quot;,
+    &quot;spec_sha256&quot;: &quot;563ecdcbab0287ab1074d50fcc16a90a38d1d56f00b5f28f55b5bfc3b84f1ab1&quot;,
+    &quot;tasks_sha256&quot;: &quot;7e44f3d73b48558bda6d842a4ec1dac35fc18f7b6ff87930d0594220c36ddf8b&quot;,
+    &quot;grader_sha256&quot;: {
+      &quot;grader.py&quot;: &quot;6a1f59a54a6df850e0e2d7d5b655f3d27e4cfadec5e3a5a9aa85aafb8be46932&quot;
+    }
+  },
+  &quot;environment&quot;: {
+    &quot;python&quot;: &quot;3.12.15&quot;,
+    &quot;platform&quot;: &quot;Windows-11-10.0.26200-SP0&quot;,
+    &quot;cpu_count&quot;: 12
+  },
+  &quot;config&quot;: {
+    &quot;repeats&quot;: 3,
+    &quot;processes&quot;: 2,
+    &quot;timeout_s&quot;: 60,
+    &quot;pass_threshold&quot;: 1.0,
+    &quot;equivalent_transforms&quot;: [
+      &quot;trailing_newline&quot;
+    ],
+    &quot;agent_visible&quot;: [],
+    &quot;task_filter&quot;: null
+  }
+}</pre>
+</body></html>

@@ -1,0 +1,69 @@
+{
+  "tool": "scorensic",
+  "version": "0.1.0",
+  "generated_at": "2026-10-31T19:35:45+00:00",
+  "eval": {
+    "name": "inspect_evals-boolq-postfix",
+    "description": "inspect_evals boolq scorer pattern(r\"\\A[\\W_]*(Yes|No)[\\W_]*\\Z\") at commit 2999eaadad35edebada59bac4a687793c11d1c3c",
+    "path": "C:\\Users\\Maz\\repos\\maz-eval-integrity\\validation\\inspect_yesno\\boolq-postfix",
+    "spec_sha256": "f661750897863f597d54edf875ab5668c15c87ff938eab7598f3c5a4d5ce7051",
+    "tasks_sha256": "7e44f3d73b48558bda6d842a4ec1dac35fc18f7b6ff87930d0594220c36ddf8b",
+    "grader_sha256": {
+      "grader.py": "d93afc0c1f29c9d3a6d942eea4dfc0860a9658d33cc8abab49b29fb95eeeb411"
+    }
+  },
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 12
+  },
+  "config": {
+    "repeats": 3,
+    "processes": 2,
+    "timeout_s": 60,
+    "pass_threshold": 1.0,
+    "equivalent_transforms": [
+      "trailing_newline"
+    ],
+    "agent_visible": [],
+    "task_filter": null
+  },
+  "summary": {
+    "tasks": 4,
+    "probes": 56,
+    "grader_calls": 336,
+    "findings": 0,
+    "by_check": {},
+    "by_severity": {},
+    "runtime_s": 12.994
+  },
+  "findings": [],
+  "skipped": [
+    {
+      "check": "answer_leak",
+      "task_id": "0-yes",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "1-no",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "2-yes",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "3-no",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    }
+  ],
+  "limitations": [
+    "Probes are generic. A grader can pass every probe and still be wrong on inputs no probe covers.",
+    "Mutant and hedged-answer probes assume a single correct answer; for open-ended tasks treat them as prompts to look, not proof.",
+    "Answer-leak search is a verbatim text match over agent_visible files; encoded, paraphrased or git-history leaks are not detected.",
+    "Python graders run in a separate process with a timeout. That is not a security sandbox: only audit graders you trust."
+  ]
+}

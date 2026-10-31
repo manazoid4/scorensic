@@ -63,3 +63,20 @@ def test_prompt_leak_long_answers_only(tmp_path):
     leaks = [f for f in report["findings"] if f["check"] == "answer_leak"]
     assert [(f["task_id"], f["evidence"]["location"]) for f in leaks] == [("long", "prompt")]
     assert any(s["task_id"] == "short" for s in report["skipped"])
+
+
+def test_grader_prints_do_not_crash_audit(tmp_path):
+    # Regression (found by the OpenCode test worker): stray print() used to corrupt the worker's JSON.
+    src = "print('debug: loaded')\ndef grade(task, output):\n    print('grading', output)\n    return output.strip() == task['reference']\n"
+    assert checks(audit(make_eval(tmp_path, src))) == set()
+
+
+def test_inspect_adapter_optional():
+    import importlib.util
+    import pytest as _pytest
+    if importlib.util.find_spec("inspect_ai") is None:
+        _pytest.skip("inspect_ai not installed (optional extra)")
+    from inspect_ai.scorer import includes
+    from scorensic.inspect_adapter import grader
+    g = grader(includes())
+    assert g({"id": "x", "reference": "Yes"}, "yesno") == 1.0  # the PR #2334 bug, reproduced

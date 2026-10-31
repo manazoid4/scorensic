@@ -1,0 +1,264 @@
+{
+  "tool": "scorensic",
+  "version": "0.1.0",
+  "generated_at": "2026-10-31T19:35:03+00:00",
+  "eval": {
+    "name": "inspect_evals-paws-prefix",
+    "description": "inspect_evals paws scorer includes() at commit ac481c7a7b4fb05d6befdfea59b47fc61b839a4f",
+    "path": "C:\\Users\\Maz\\repos\\maz-eval-integrity\\validation\\inspect_yesno\\paws-prefix",
+    "spec_sha256": "d78f7cea50c72f80b3d8ea47b3443e3aecd605bd3bcdfdc11c8bde7cc41805ca",
+    "tasks_sha256": "765ba9e19bc04b066896015afc704f8e814ecc6648e7af060146a8b27100c580",
+    "grader_sha256": {
+      "grader.py": "f16dfe201a4d524d14e9a265c4bb0ffed946ac045fb33513b01cf8d915f9df2d"
+    }
+  },
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 12
+  },
+  "config": {
+    "repeats": 3,
+    "processes": 2,
+    "timeout_s": 60,
+    "pass_threshold": 1.0,
+    "equivalent_transforms": [
+      "trailing_newline"
+    ],
+    "agent_visible": [],
+    "task_filter": null
+  },
+  "summary": {
+    "tasks": 4,
+    "probes": 56,
+    "grader_calls": 336,
+    "findings": 10,
+    "by_check": {
+      "accepts_wrong_answer": 10
+    },
+    "by_severity": {
+      "high": 10
+    },
+    "runtime_s": 12.927
+  },
+  "findings": [
+    {
+      "id": "2c241d86c997",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "medium",
+      "task_id": "0-yes",
+      "title": "Grader accepts a wrong answer (prompt_echo)",
+      "explanation": "The output '\\nAnswer Yes if the following two sentences are paraphrases. If they are not, answer No.\\nDo not give any other answer other than Yes or No in your response.\\nThe bridge was built in 1932 and opened a year later.\\nBuilt in 1932, the bridge opened the following year.\\n' is not the reference 'Yes' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "prompt_echo",
+        "output": "\nAnswer Yes if the following two sentences are paraphrases. If they are not, answer No.\nDo not give any other answer other than Yes or No in your response.\nThe bridge was built in 1932 and opened a year later.\nBuilt in 1932, the bridge opened the following year.\n",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 0-yes"
+    },
+    {
+      "id": "94725f18f144",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "medium",
+      "task_id": "0-yes",
+      "title": "Grader accepts a wrong answer (hedged_answer)",
+      "explanation": "The output 'It could be no, or Yes, or no0.' is not the reference 'Yes' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "hedged_answer",
+        "output": "It could be no, or Yes, or no0.",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 0-yes"
+    },
+    {
+      "id": "b4dcd2f73233",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "high",
+      "task_id": "1-no",
+      "title": "Grader accepts a wrong answer (refusal)",
+      "explanation": "The output \"I don't know.\" is not the reference 'No' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "refusal",
+        "output": "I don't know.",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 1-no"
+    },
+    {
+      "id": "042022e5fc09",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "medium",
+      "task_id": "1-no",
+      "title": "Grader accepts a wrong answer (prompt_echo)",
+      "explanation": "The output '\\nAnswer Yes if the following two sentences are paraphrases. If they are not, answer No.\\nDo not give any other answer other than Yes or No in your response.\\nShe moved from Leeds to Bristol in 2010.\\nShe moved from Bristol to Leeds in 2010.\\n' is not the reference 'No' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "prompt_echo",
+        "output": "\nAnswer Yes if the following two sentences are paraphrases. If they are not, answer No.\nDo not give any other answer other than Yes or No in your response.\nShe moved from Leeds to Bristol in 2010.\nShe moved from Bristol to Leeds in 2010.\n",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 1-no"
+    },
+    {
+      "id": "15936ca95eac",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "medium",
+      "task_id": "1-no",
+      "title": "Grader accepts a wrong answer (hedged_answer)",
+      "explanation": "The output 'It could be yes, or No, or yes0.' is not the reference 'No' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "hedged_answer",
+        "output": "It could be yes, or No, or yes0.",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 1-no"
+    },
+    {
+      "id": "e012eae37b7b",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "medium",
+      "task_id": "2-yes",
+      "title": "Grader accepts a wrong answer (prompt_echo)",
+      "explanation": "The output '\\nAnswer Yes if the following two sentences are paraphrases. If they are not, answer No.\\nDo not give any other answer other than Yes or No in your response.\\nThe film was directed by Ana Ruiz and produced by Tom Hale.\\nTom Hale produced the film, which Ana Ruiz directed.\\n' is not the reference 'Yes' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "prompt_echo",
+        "output": "\nAnswer Yes if the following two sentences are paraphrases. If they are not, answer No.\nDo not give any other answer other than Yes or No in your response.\nThe film was directed by Ana Ruiz and produced by Tom Hale.\nTom Hale produced the film, which Ana Ruiz directed.\n",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 2-yes"
+    },
+    {
+      "id": "705380890eeb",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "medium",
+      "task_id": "2-yes",
+      "title": "Grader accepts a wrong answer (hedged_answer)",
+      "explanation": "The output 'It could be no, or Yes, or no0.' is not the reference 'Yes' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "hedged_answer",
+        "output": "It could be no, or Yes, or no0.",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 2-yes"
+    },
+    {
+      "id": "3b710e7592b8",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "high",
+      "task_id": "3-no",
+      "title": "Grader accepts a wrong answer (refusal)",
+      "explanation": "The output \"I don't know.\" is not the reference 'No' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "refusal",
+        "output": "I don't know.",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 3-no"
+    },
+    {
+      "id": "6ef24f451a5b",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "medium",
+      "task_id": "3-no",
+      "title": "Grader accepts a wrong answer (prompt_echo)",
+      "explanation": "The output '\\nAnswer Yes if the following two sentences are paraphrases. If they are not, answer No.\\nDo not give any other answer other than Yes or No in your response.\\nThe river flows north into the lake.\\nThe lake flows north into the river.\\n' is not the reference 'No' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "prompt_echo",
+        "output": "\nAnswer Yes if the following two sentences are paraphrases. If they are not, answer No.\nDo not give any other answer other than Yes or No in your response.\nThe river flows north into the lake.\nThe lake flows north into the river.\n",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 3-no"
+    },
+    {
+      "id": "bf2f513c1239",
+      "check": "accepts_wrong_answer",
+      "severity": "high",
+      "confidence": "medium",
+      "task_id": "3-no",
+      "title": "Grader accepts a wrong answer (hedged_answer)",
+      "explanation": "The output 'It could be yes, or No, or yes0.' is not the reference 'No' or a listed alternative, yet it scored 1.0 on all 6 runs.",
+      "evidence": {
+        "probe_kind": "hedged_answer",
+        "output": "It could be yes, or No, or yes0.",
+        "expected": "fail",
+        "score": 1.0,
+        "pass_threshold": 1.0,
+        "runs": 6
+      },
+      "remediation": "Compare a normalised, parsed answer for equality instead of substring/regex presence; add this output as a known_wrong regression case.",
+      "reproduce": "scorensic audit paws-prefix --task 3-no"
+    }
+  ],
+  "skipped": [
+    {
+      "check": "answer_leak",
+      "task_id": "0-yes",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "1-no",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "2-yes",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    },
+    {
+      "check": "answer_leak",
+      "task_id": "3-no",
+      "reason": "reference shorter than 4 characters; a text search would be meaningless"
+    }
+  ],
+  "limitations": [
+    "Probes are generic. A grader can pass every probe and still be wrong on inputs no probe covers.",
+    "Mutant and hedged-answer probes assume a single correct answer; for open-ended tasks treat them as prompts to look, not proof.",
+    "Answer-leak search is a verbatim text match over agent_visible files; encoded, paraphrased or git-history leaks are not detected.",
+    "Python graders run in a separate process with a timeout. That is not a security sandbox: only audit graders you trust."
+  ]
+}

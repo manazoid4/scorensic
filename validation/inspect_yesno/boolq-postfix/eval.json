@@ -1,0 +1,9 @@
+{
+  "name": "inspect_evals-boolq-postfix",
+  "description": "inspect_evals boolq scorer pattern(r\"\\A[\\W_]*(Yes|No)[\\W_]*\\Z\") at commit 2999eaadad35edebada59bac4a687793c11d1c3c",
+  "grader": {
+    "type": "python",
+    "path": "grader.py"
+  },
+  "tasks": "../boolq_tasks.jsonl"
+}

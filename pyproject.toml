@@ -8,6 +8,9 @@ requires-python = ">=3.11"
 authors = [{ name = "Maz Works" }]
 dependencies = []
 
+[project.optional-dependencies]
+inspect = ["inspect_ai>=0.3.280"]
+
 [project.scripts]
 scorensic = "scorensic.cli:main"
 

@@ -32,6 +32,7 @@ def _to_score(value):
 def main():
     grader_path, func_name = sys.argv[1], sys.argv[2]
     req = json.load(sys.stdin)
+    result_out, sys.stdout = sys.stdout, sys.stderr  # grader prints must not corrupt the JSON result
     _limit_memory(req.get("memory_mb"))
     sys.path.insert(0, str(__import__("pathlib").Path(grader_path).resolve().parent))
     spec = importlib.util.spec_from_file_location("_maz_grader", grader_path)
@@ -47,7 +48,7 @@ def main():
             except Exception as exc:  # grader bugs are findings, not crashes of the tool
                 runs.append({"error": f"{type(exc).__name__}: {exc}"[:300]})
         results.append(runs)
-    json.dump({"results": results}, sys.stdout)
+    json.dump({"results": results}, result_out)
 
 
 if __name__ == "__main__":

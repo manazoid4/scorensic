@@ -1,0 +1,39 @@
+{
+  "paws-prefix": {
+    "bad_accepted": [
+      "yesno",
+      "yesno",
+      "I don't know",
+      "Not sure",
+      "None of the above",
+      "I cannot determine the answer.",
+      "Yes-man tendencies aside",
+      "Unlike yesterday",
+      "I like her eyes",
+      "Domino"
+    ],
+    "valid_rejected": []
+  },
+  "paws-postfix": {
+    "bad_accepted": [],
+    "valid_rejected": []
+  },
+  "boolq-prefix": {
+    "bad_accepted": [
+      "yesno",
+      "I don't know",
+      "I like her eyes",
+      "Domino"
+    ],
+    "valid_rejected": [
+      "**YES!!**",
+      " Yes\n",
+      "**NO!!**",
+      " No\n"
+    ]
+  },
+  "boolq-postfix": {
+    "bad_accepted": [],
+    "valid_rejected": []
+  }
+}

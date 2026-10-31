@@ -1,0 +1,9 @@
+{
+  "name": "inspect_evals-paws-prefix",
+  "description": "inspect_evals paws scorer includes() at commit ac481c7a7b4fb05d6befdfea59b47fc61b839a4f",
+  "grader": {
+    "type": "python",
+    "path": "grader.py"
+  },
+  "tasks": "../paws_tasks.jsonl"
+}

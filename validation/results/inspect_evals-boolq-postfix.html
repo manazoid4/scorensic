@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eval integrity report: inspect_evals-boolq-postfix</title>
+<style>
+body{font:16px/1.55 system-ui,sans-serif;max-width:860px;margin:0 auto;padding:24px 16px;color:#1f2928}
+code,pre{font-family:ui-monospace,Consolas,monospace;font-size:.88em} pre{white-space:pre-wrap;background:#f4f5f1;padding:12px;border-radius:6px}
+.f{border:1px solid #d8dbd3;border-left-width:6px;border-radius:8px;padding:4px 16px;margin:14px 0}
+.high{border-left-color:#b3261e} .medium{border-left-color:#c77700} .low{border-left-color:#5d6b66}
+.sev{font:700 .72rem ui-monospace,monospace;text-transform:uppercase;letter-spacing:.06em}
+.meta{color:#58615f;font-size:.9rem}
+</style></head><body>
+<h1>Eval integrity report</h1>
+<p class="meta">inspect_evals-boolq-postfix &middot; scorensic 0.1.0 &middot; 2026-10-31T19:35:45+00:00</p>
+<p>inspect_evals boolq scorer pattern(r&quot;\A[\W_]*(Yes|No)[\W_]*\Z&quot;) at commit 2999eaadad35edebada59bac4a687793c11d1c3c</p>
+<h2>Summary</h2>
+<p>4 task(s), 56 probe(s), 336 grader call(s), 0 finding(s) in 12.994s.
+This is not a score of the benchmark. Each finding below is a specific input on which the grader behaved differently from what the task says it should.</p>
+<ul><li>No findings.</li></ul>
+<h2>Findings</h2>
+<p>No findings. The grader passed every probe. That is evidence about these probes only, not proof the grader is correct.</p>
+<h2>Skipped checks</h2><ul><li>answer_leak / 0-yes: reference shorter than 4 characters; a text search would be meaningless</li><li>answer_leak / 1-no: reference shorter than 4 characters; a text search would be meaningless</li><li>answer_leak / 2-yes: reference shorter than 4 characters; a text search would be meaningless</li><li>answer_leak / 3-no: reference shorter than 4 characters; a text search would be meaningless</li></ul>
+<h2>Limitations</h2><ul><li>Probes are generic. A grader can pass every probe and still be wrong on inputs no probe covers.</li><li>Mutant and hedged-answer probes assume a single correct answer; for open-ended tasks treat them as prompts to look, not proof.</li><li>Answer-leak search is a verbatim text match over agent_visible files; encoded, paraphrased or git-history leaks are not detected.</li><li>Python graders run in a separate process with a timeout. That is not a security sandbox: only audit graders you trust.</li></ul>
+<h2>Provenance</h2><pre>{
+  &quot;eval&quot;: {
+    &quot;name&quot;: &quot;inspect_evals-boolq-postfix&quot;,
+    &quot;description&quot;: &quot;inspect_evals boolq scorer pattern(r\&quot;\\A[\\W_]*(Yes|No)[\\W_]*\\Z\&quot;) at commit 2999eaadad35edebada59bac4a687793c11d1c3c&quot;,
+    &quot;path&quot;: &quot;C:\\Users\\Maz\\repos\\maz-eval-integrity\\validation\\inspect_yesno\\boolq-postfix&quot;,
+    &quot;spec_sha256&quot;: &quot;f661750897863f597d54edf875ab5668c15c87ff938eab7598f3c5a4d5ce7051&quot;,
+    &quot;tasks_sha256&quot;: &quot;7e44f3d73b48558bda6d842a4ec1dac35fc18f7b6ff87930d0594220c36ddf8b&quot;,
+    &quot;grader_sha256&quot;: {
+      &quot;grader.py&quot;: &quot;d93afc0c1f29c9d3a6d942eea4dfc0860a9658d33cc8abab49b29fb95eeeb411&quot;
+    }
+  },
+  &quot;environment&quot;: {
+    &quot;python&quot;: &quot;3.12.15&quot;,
+    &quot;platform&quot;: &quot;Windows-11-10.0.26200-SP0&quot;,
+    &quot;cpu_count&quot;: 12
+  },
+  &quot;config&quot;: {
+    &quot;repeats&quot;: 3,
+    &quot;processes&quot;: 2,
+    &quot;timeout_s&quot;: 60,
+    &quot;pass_threshold&quot;: 1.0,
+    &quot;equivalent_transforms&quot;: [
+      &quot;trailing_newline&quot;
+    ],
+    &quot;agent_visible&quot;: [],
+    &quot;task_filter&quot;: null
+  }
+}</pre>
+</body></html>
