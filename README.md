@@ -10,6 +10,22 @@
 
 A benchmark score is only as good as the code that marks the answers. Published audits have found graders that pass agents which do nothing, accept answers that merely *contain* the right string, or leak expected outputs into the agent's environment. Sources and their verification status are in [`research/`](research/) and [RESEARCH_EVIDENCE.md](RESEARCH_EVIDENCE.md).
 
+## For businesses: can AI do this job?
+
+Put 10–20 of your real tasks in a sheet (`question,right_answer`, optional `context`). Scorensic runs them on any model, local or online, and gives you a one-page report card. It shows how many were right, wrong answers stated confidently, "didn't know", consistency, speed, and whether your data left the building. Before scoring, it checks that the marking itself can't be fooled.
+
+```bash
+uv run scorensic check examples/business/invoices.csv --model llama3.2            # local Ollama
+uv run scorensic check my-tasks.csv --model qwen3 --model llama3.2                  # compare models
+uv run scorensic check my-tasks.csv --endpoint https://api.example.com/v1 --model x --key-env MY_API_KEY
+```
+
+The bundled `examples/business/invoices.csv` is a short, made-up starter sheet. Ready-made UK business workload packs are on the roadmap.
+
+## For eval builders: check the grader
+
+The rest of this README covers the grader-integrity engine for benchmark maintainers and eval teams.
+
 ## Quick start
 
 Needs [uv](https://docs.astral.sh/uv/) (it fetches Python 3.11+ if missing). No API key, no network after install, no GPU.

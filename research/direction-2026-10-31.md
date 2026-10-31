@@ -1,7 +1,10 @@
 # Direction change, 31 Oct 2026 (maintainer decision)
 
 **From:** a technical tool that audits benchmark graders, for benchmark maintainers.
-**To:** a simple tool that shows a business owner, in plain English, whether a local AI model can do *their* work, on *their* machine. It builds the trust that local inference needs, and supports Maz Works setting up local models (GPUs, custom configs).
+**To (revised same day):** one engine with two front doors, nothing narrowed.
+- **Businesses:** a simple tool that shows a business owner, in plain English, whether a local AI model can do *their* work, on *their* machine. It builds the trust that local inference needs, and supports Maz Works setting up local models (GPUs, custom configs).
+- **Tech crowd and labs** (benchmark maintainers, Anthropic, OpenAI, eval teams): the grader-integrity engine, adapters (Inspect, Harbor) and published validation.
+- **Shared idea:** every score ships with proof that the marking itself is honest.
 
 ## Why (evidence)
 - YC Requests for Startups, Winter 2027 (ycombinator.com/rfs, read 31 Oct 2026):

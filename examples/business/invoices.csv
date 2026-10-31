@@ -1,0 +1,9 @@
+id,question,right_answer,context
+1,What is the invoice total including VAT?,£1440.00,"INVOICE 2231. Supplier: Brightwell Plumbing Ltd. Labour £600.00. Parts £600.00. Subtotal £1200.00. VAT 20% £240.00. Total due £1440.00. Due date 14 November 2026."
+2,What is the due date? Reply as DD Month YYYY.,14 November 2026,"INVOICE 2231. Supplier: Brightwell Plumbing Ltd. Labour £600.00. Parts £600.00. Subtotal £1200.00. VAT 20% £240.00. Total due £1440.00. Due date 14 November 2026."
+3,Who is the supplier?,Brightwell Plumbing Ltd,"INVOICE 2231. Supplier: Brightwell Plumbing Ltd. Labour £600.00. Parts £600.00. Subtotal £1200.00. VAT 20% £240.00. Total due £1440.00. Due date 14 November 2026."
+4,How many people is the booking for?,6,"Hi, could I book a table for six people this Friday at 7.30pm? It's for my mum's birthday. Thanks, Priya"
+5,What time is the booking?,7.30pm,"Hi, could I book a table for six people this Friday at 7.30pm? It's for my mum's birthday. Thanks, Priya"
+6,Is the customer asking for a refund? Answer yes or no.,no,"Hello, the boiler service last week was great, thank you. Could you send me the certificate by email? Regards, Tom"
+7,What is the customer's order number?,A-55812,"Hi, my order A-55812 arrived with a cracked lid. Can you send a replacement? - Jo"
+8,What is the price per hour?,£45,"Our standard rate is £45 per hour, with a minimum call-out of one hour. Weekend work is charged at £60 per hour."

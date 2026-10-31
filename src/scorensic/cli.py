@@ -8,7 +8,7 @@ from pathlib import Path
 
 from . import __version__
 from .audit import audit
-from .report import compare, html
+from .report import card_html, compare, html
 
 EXAMPLES = Path(__file__).resolve().parents[2] / "examples"
 
@@ -83,6 +83,24 @@ def cmd_compare(args):
     return 1 if diff["new"] else 0
 
 
+def cmd_check(args):
+    from .check import run
+    import os
+    res = run(args.sheet, args.endpoint, args.model, repeats=args.repeats, api_key=os.environ.get(args.key_env) if args.key_env else None)
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    stem = Path(args.sheet).stem
+    (out / f"{stem}-card.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
+    (out / f"{stem}-card.html").write_text(card_html(res), encoding="utf-8")
+    mc = res["marking_check"]
+    print(f"Marking check: rejected {mc['tricks_caught']}/{mc['tricks_total']} trick answers")
+    for m in res["models"]:
+        print(f"{m['model']:<28} {m['right']}/{m['total']} right, {m['wrong']} wrong, {m['no_answer']} didn't know, "
+              f"{m['consistent']}/{m['total']} consistent, {m['avg_seconds']}s avg")
+    print(f"Report card: {out / (stem + '-card.html')}")
+    return 0
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="scorensic", description="Check that benchmark graders behave correctly.")
     p.add_argument("--version", action="version", version=__version__)
@@ -99,6 +117,14 @@ def main(argv=None):
     a.add_argument("--out", default="results")
     a.add_argument("--fail-on", nargs="*", choices=["high", "medium", "low"], help="exit 1 if findings at these severities (for CI)")
     a.set_defaults(fn=cmd_audit)
+    k = sub.add_parser("check", help="run a sheet of your own questions on one or more models; plain report card")
+    k.add_argument("sheet", help="CSV with columns question,right_answer (optional: id,context)")
+    k.add_argument("--model", action="append", required=True, help="model name (repeat to compare)")
+    k.add_argument("--endpoint", default="http://localhost:11434/v1", help="OpenAI-compatible URL (default: local Ollama)")
+    k.add_argument("--key-env", help="name of the environment variable holding an API key (cloud only)")
+    k.add_argument("--repeats", type=int, default=2)
+    k.add_argument("--out", default="results")
+    k.set_defaults(fn=cmd_check)
     r = sub.add_parser("report", help="re-render HTML from a JSON report")
     r.add_argument("json")
     r.set_defaults(fn=cmd_report)
