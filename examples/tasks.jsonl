@@ -1,0 +1,3 @@
+{"id": "add-1", "prompt": "What is 17 + 25? Reply with the number only.", "reference": "42", "valid_alternatives": ["42.0"], "known_wrong": ["41", "24"]}
+{"id": "capital-1", "prompt": "What is the capital of Australia? Reply with the city name only.", "reference": "Canberra", "valid_alternatives": ["canberra"], "known_wrong": ["Sydney"]}
+{"id": "prime-1", "prompt": "Is 91 a prime number? Answer true or false.", "reference": "false", "valid_alternatives": ["False"], "known_wrong": ["true"]}

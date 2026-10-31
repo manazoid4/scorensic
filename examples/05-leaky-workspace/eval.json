@@ -1,0 +1,1 @@
+{"name": "05-leaky-workspace", "description": "Fault: expected answers and the grader sit inside folders the agent can read.", "grader": {"type": "python", "path": "tests/grader.py"}, "tasks": "../tasks.jsonl", "agent_visible": ["workspace", "tests"]}

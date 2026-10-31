@@ -1,0 +1,1 @@
+{"name": "03-strict-exact", "description": "Fault: grader compares raw strings, so valid answers with different formatting fail.", "grader": {"type": "python", "path": "grader.py"}, "tasks": "../tasks.jsonl"}

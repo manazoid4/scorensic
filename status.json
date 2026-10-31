@@ -1,0 +1,8 @@
+{
+  "project": "Scorensic",
+  "stage": "first-reproducible-tests",
+  "stages": ["research-initiated", "first-reproducible-tests", "mvp-working", "external-validation", "public-beta"],
+  "updated": "2026-10-31",
+  "repository": "https://github.com/manazoid4/scorensic",
+  "evidence": "Checks detect the deliberate fault in 5 synthetic toy graders with 0 findings on the clean control. No real benchmark validated yet."
+}

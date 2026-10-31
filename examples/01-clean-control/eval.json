@@ -1,0 +1,1 @@
+{"name": "01-clean-control", "description": "Control: a careful grader that normalises then compares. Expected result: no findings.", "grader": {"type": "python", "path": "grader.py"}, "tasks": "../tasks.jsonl"}

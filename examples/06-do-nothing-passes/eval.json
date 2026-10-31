@@ -1,0 +1,1 @@
+{"name": "06-do-nothing-passes", "description": "Fault: grader only checks that no known-wrong answer was given, so an empty or refusing agent passes.", "grader": {"type": "python", "path": "grader.py"}, "tasks": "../tasks.jsonl"}

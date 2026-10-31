@@ -1,0 +1,1 @@
+{"name": "04-hidden-state", "description": "Fault: grader keeps a call counter and flips every fifth result, so identical inputs score differently.", "grader": {"type": "python", "path": "grader.py"}, "tasks": "../tasks.jsonl"}

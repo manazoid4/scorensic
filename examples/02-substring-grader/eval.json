@@ -1,0 +1,1 @@
+{"name": "02-substring-grader", "description": "Fault: grader passes any output that contains the reference (a common regex/contains pattern).", "grader": {"type": "python", "path": "grader.py"}, "tasks": "../tasks.jsonl"}
