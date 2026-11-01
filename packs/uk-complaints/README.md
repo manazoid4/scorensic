@@ -13,8 +13,13 @@
 
 **Run it:**
 ```bash
-uv run scorensic check packs/uk-complaints/pack.csv --model <your-model>
+uv run scorensic check packs/uk-complaints/pack.csv --model <your-model>      # 54 short-answer jobs
+uv run scorensic check packs/uk-complaints/letters.csv --model <your-model>   # 8 reply letters
 ```
+
+**Letters (v0.2):** 8 replies, marked by rules (`right_answer` starts with `rules:`). Each reply must use the customer's name and reference, the remedy and the named signer, and must not contain placeholders such as `[Company Name]`. The two FCA final responses (c01, c04) must also give the Financial Ombudsman Service referral right, the six-month limit, the website and the leaflet ([DISP 1.6.2R](https://handbook.fca.org.uk/handbook/disp1/disp1s6), read 1 Nov 2026). Broadband and energy replies must **not** name the Financial Ombudsman Service, because those disputes go to other schemes. Rules check content, not tone: a person still reads the letter.
+
+**First real run:** [validation/FIRST-REAL-RUN.md](../../validation/FIRST-REAL-RUN.md). Two 3B local models got 0 of 8 deadlines right, and neither wrote one compliant FCA letter.
 
 **Contents:** 54 tasks from 10 complaints and non-complaints. All of them are **invented for testing**; none is real customer data. Deadlines are calculated by `build.py` (received date + 8 weeks), not typed in by hand.
 
@@ -25,6 +30,5 @@ uv run scorensic check packs/uk-complaints/pack.csv --model <your-model>
 
 **Limits (v0.1):**
 - Only 10 messages, so this is too small to rank models finely.
-- Drafting the actual response letter is not tested yet. That needs a different kind of marking (must-include and must-not-say rules), which is next.
 - "Business days" deadlines (DISP 1.5 and the payment-services rules) are not included yet.
 - This is not legal or compliance advice.

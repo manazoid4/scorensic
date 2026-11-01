@@ -1,4 +1,4 @@
-# Build status (31 Oct 2026)
+# Build status (1 Nov 2026)
 
 ## Done (with evidence)
 - [x] Core CLI: `doctor`, `demo`, `audit`, `report`, `compare` (stdlib only).
@@ -10,7 +10,14 @@
 - [x] Second bug found by the OpenCode test worker and fixed: a grader `print()` corrupted the worker's JSON output.
 - [x] Bug found by tests and fixed: an absolute interpreter path in a command grader used to crash `audit()`.
 
+- [x] Business `check` front door + UK complaints pack (54 extraction tasks).
+- [x] Rules marking for written work (`rules: must=...; never=...`), self-checked with drop-a-must, add-a-never, prompt-echo and context-echo probes. Letters pack: 8 replies, 118/118 tricks rejected. 34 tests pass, 1 skipped.
+- [x] First real-model run (1 Nov, llama3.2:3b + qwen2.5:3b on CPU Ollama): see validation/FIRST-REAL-RUN.md.
+
 ## Next (resumable checklist)
+- [ ] Business pack: run on bigger local models (qwen3 8B, llama3.1 8B) and one cloud model for comparison; add a "deadline by code" baseline.
+- [ ] Ask 3 UK complaints/ops people whether this report card would change a buying decision (no customers yet).
+- [ ] Update the live page mazworks.uk/research/scorensic to the business-first message (MazWorkSite repo).
 - [ ] Holdout validation: inspect_evals #2310 (agentic_misalignment), #2312 (agentharm). Untouched so far. Measure before changing probes.
 - [ ] Refusal variants without punctuation (would fix the boolq miss). Only after the holdout run.
 - [ ] Measure false positives on 20–30 known-good graders.

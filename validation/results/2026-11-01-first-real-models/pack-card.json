@@ -1,0 +1,1118 @@
+{
+  "tool": "scorensic check",
+  "sheet": "pack.csv",
+  "endpoint_is_local": true,
+  "endpoint_host": "localhost",
+  "repeats": 2,
+  "marking_check": {
+    "tricks_caught": 342,
+    "tricks_total": 342,
+    "problems": []
+  },
+  "models": [
+    {
+      "model": "llama3.2:3b",
+      "right": 37,
+      "wrong": 17,
+      "no_answer": 0,
+      "errors": 0,
+      "total": 54,
+      "consistent": 54,
+      "avg_seconds": 0.59,
+      "rows": [
+        {
+          "id": "c01-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 6.11,
+          "error": null
+        },
+        {
+          "id": "c01-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "refund",
+          "answer": "refund",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.34,
+          "error": null
+        },
+        {
+          "id": "c01-amount",
+          "question": "What is the money amount the customer mentions, in pounds? Answer with the number only, e.g. 12.50.",
+          "right_answer": "84.50",
+          "answer": "84.50",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.57,
+          "error": null
+        },
+        {
+          "id": "c01-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "77120394",
+          "answer": "77120394",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.48,
+          "error": null
+        },
+        {
+          "id": "c01-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.33,
+          "error": null
+        },
+        {
+          "id": "c01-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "Yes",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.3,
+          "error": null
+        },
+        {
+          "id": "c01-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "29 October 2026",
+          "answer": "5 November 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.8,
+          "error": null
+        },
+        {
+          "id": "c02-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.43,
+          "error": null
+        },
+        {
+          "id": "c03-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.61,
+          "error": null
+        },
+        {
+          "id": "c03-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "replacement",
+          "answer": "replacement",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.32,
+          "error": null
+        },
+        {
+          "id": "c03-amount",
+          "question": "What is the money amount the customer mentions, in pounds? Answer with the number only, e.g. 12.50.",
+          "right_answer": "129.99",
+          "answer": "129.99",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.49,
+          "error": null
+        },
+        {
+          "id": "c03-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "4471-B",
+          "answer": "4471-B",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.48,
+          "error": null
+        },
+        {
+          "id": "c03-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.32,
+          "error": null
+        },
+        {
+          "id": "c03-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "Yes",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.3,
+          "error": null
+        },
+        {
+          "id": "c03-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "10 November 2026",
+          "answer": "5 November 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.77,
+          "error": null
+        },
+        {
+          "id": "c04-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.62,
+          "error": null
+        },
+        {
+          "id": "c04-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "explanation",
+          "answer": "Explanation",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.32,
+          "error": null
+        },
+        {
+          "id": "c04-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "HX-209931",
+          "answer": "HX-209931",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.58,
+          "error": null
+        },
+        {
+          "id": "c04-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.31,
+          "error": null
+        },
+        {
+          "id": "c04-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.29,
+          "error": null
+        },
+        {
+          "id": "c04-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "17 November 2026",
+          "answer": "5 November 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.79,
+          "error": null
+        },
+        {
+          "id": "c05-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.6,
+          "error": null
+        },
+        {
+          "id": "c05-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "compensation",
+          "answer": "compensation",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.39,
+          "error": null
+        },
+        {
+          "id": "c05-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "BB-55102",
+          "answer": "BB-55102",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.55,
+          "error": null
+        },
+        {
+          "id": "c05-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.28,
+          "error": null
+        },
+        {
+          "id": "c05-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "Yes.",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.37,
+          "error": null
+        },
+        {
+          "id": "c05-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "26 November 2026",
+          "answer": "5 December 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.74,
+          "error": null
+        },
+        {
+          "id": "c06-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No\n\nI don't know",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.84,
+          "error": null
+        },
+        {
+          "id": "c07-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.41,
+          "error": null
+        },
+        {
+          "id": "c07-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "apology",
+          "answer": "apology",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.39,
+          "error": null
+        },
+        {
+          "id": "c07-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "ENG-8812",
+          "answer": "ENG-8812",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.6,
+          "error": null
+        },
+        {
+          "id": "c07-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.31,
+          "error": null
+        },
+        {
+          "id": "c07-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "Yes",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.3,
+          "error": null
+        },
+        {
+          "id": "c07-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "4 December 2026",
+          "answer": "5 December 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.8,
+          "error": null
+        },
+        {
+          "id": "c08-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.61,
+          "error": null
+        },
+        {
+          "id": "c08-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "cancellation",
+          "answer": "Cancellation",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.32,
+          "error": null
+        },
+        {
+          "id": "c08-amount",
+          "question": "What is the money amount the customer mentions, in pounds? Answer with the number only, e.g. 12.50.",
+          "right_answer": "39.99",
+          "answer": "39.99",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.5,
+          "error": null
+        },
+        {
+          "id": "c08-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "300417",
+          "answer": "MEMBER 300417",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.71,
+          "error": null
+        },
+        {
+          "id": "c08-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.29,
+          "error": null
+        },
+        {
+          "id": "c08-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "Yes",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.28,
+          "error": null
+        },
+        {
+          "id": "c08-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "9 December 2026",
+          "answer": "5 December 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.76,
+          "error": null
+        },
+        {
+          "id": "c09-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.51,
+          "error": null
+        },
+        {
+          "id": "c09-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "explanation",
+          "answer": "Explanation",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.28,
+          "error": null
+        },
+        {
+          "id": "c09-amount",
+          "question": "What is the money amount the customer mentions, in pounds? Answer with the number only, e.g. 12.50.",
+          "right_answer": "412.36",
+          "answer": "412.36",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.45,
+          "error": null
+        },
+        {
+          "id": "c09-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "E-7781230",
+          "answer": "E-7781230",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.66,
+          "error": null
+        },
+        {
+          "id": "c09-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.27,
+          "error": null
+        },
+        {
+          "id": "c09-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes.",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.39,
+          "error": null
+        },
+        {
+          "id": "c09-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "15 December 2026",
+          "answer": "5 December 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.74,
+          "error": null
+        },
+        {
+          "id": "c10-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.55,
+          "error": null
+        },
+        {
+          "id": "c10-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "repair",
+          "answer": "refund",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.3,
+          "error": null
+        },
+        {
+          "id": "c10-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "66-1043",
+          "answer": "66-1043",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.54,
+          "error": null
+        },
+        {
+          "id": "c10-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.28,
+          "error": null
+        },
+        {
+          "id": "c10-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "Yes",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.3,
+          "error": null
+        },
+        {
+          "id": "c10-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "22 December 2026",
+          "answer": "27 November 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.76,
+          "error": null
+        }
+      ]
+    },
+    {
+      "model": "qwen2.5:3b",
+      "right": 39,
+      "wrong": 11,
+      "no_answer": 4,
+      "errors": 0,
+      "total": 54,
+      "consistent": 54,
+      "avg_seconds": 0.62,
+      "rows": [
+        {
+          "id": "c01-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 4.65,
+          "error": null
+        },
+        {
+          "id": "c01-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "refund",
+          "answer": "refund",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.29,
+          "error": null
+        },
+        {
+          "id": "c01-amount",
+          "question": "What is the money amount the customer mentions, in pounds? Answer with the number only, e.g. 12.50.",
+          "right_answer": "84.50",
+          "answer": "84.50",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.59,
+          "error": null
+        },
+        {
+          "id": "c01-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "77120394",
+          "answer": "77120394",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.83,
+          "error": null
+        },
+        {
+          "id": "c01-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.25,
+          "error": null
+        },
+        {
+          "id": "c01-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "I don't know",
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.49,
+          "error": null
+        },
+        {
+          "id": "c01-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "29 October 2026",
+          "answer": "5 September 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.87,
+          "error": null
+        },
+        {
+          "id": "c02-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.4,
+          "error": null
+        },
+        {
+          "id": "c03-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.5,
+          "error": null
+        },
+        {
+          "id": "c03-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "replacement",
+          "answer": "replacement",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.28,
+          "error": null
+        },
+        {
+          "id": "c03-amount",
+          "question": "What is the money amount the customer mentions, in pounds? Answer with the number only, e.g. 12.50.",
+          "right_answer": "129.99",
+          "answer": "129.99",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.7,
+          "error": null
+        },
+        {
+          "id": "c03-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "4471-B",
+          "answer": "4471-B",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.56,
+          "error": null
+        },
+        {
+          "id": "c03-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.27,
+          "error": null
+        },
+        {
+          "id": "c03-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "I don't know",
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.53,
+          "error": null
+        },
+        {
+          "id": "c03-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "10 November 2026",
+          "answer": "12 November 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 1.01,
+          "error": null
+        },
+        {
+          "id": "c04-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.6,
+          "error": null
+        },
+        {
+          "id": "c04-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "explanation",
+          "answer": "explanation",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.39,
+          "error": null
+        },
+        {
+          "id": "c04-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "HX-209931",
+          "answer": "HX-209931",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.86,
+          "error": null
+        },
+        {
+          "id": "c04-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "I don't know",
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.53,
+          "error": null
+        },
+        {
+          "id": "c04-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "Yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.26,
+          "error": null
+        },
+        {
+          "id": "c04-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "17 November 2026",
+          "answer": "22 November 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.99,
+          "error": null
+        },
+        {
+          "id": "c05-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.5,
+          "error": null
+        },
+        {
+          "id": "c05-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "compensation",
+          "answer": "compensation",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.36,
+          "error": null
+        },
+        {
+          "id": "c05-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "BB-55102",
+          "answer": "BB-55102",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.72,
+          "error": null
+        },
+        {
+          "id": "c05-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.24,
+          "error": null
+        },
+        {
+          "id": "c05-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.28,
+          "error": null
+        },
+        {
+          "id": "c05-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "26 November 2026",
+          "answer": "18 December 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.97,
+          "error": null
+        },
+        {
+          "id": "c06-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.35,
+          "error": null
+        },
+        {
+          "id": "c07-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.45,
+          "error": null
+        },
+        {
+          "id": "c07-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "apology",
+          "answer": "apology",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.34,
+          "error": null
+        },
+        {
+          "id": "c07-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "ENG-8812",
+          "answer": "ENG-8812",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.69,
+          "error": null
+        },
+        {
+          "id": "c07-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.25,
+          "error": null
+        },
+        {
+          "id": "c07-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.31,
+          "error": null
+        },
+        {
+          "id": "c07-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "4 December 2026",
+          "answer": "12 December 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.98,
+          "error": null
+        },
+        {
+          "id": "c08-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.5,
+          "error": null
+        },
+        {
+          "id": "c08-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "cancellation",
+          "answer": "cancellation",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.35,
+          "error": null
+        },
+        {
+          "id": "c08-amount",
+          "question": "What is the money amount the customer mentions, in pounds? Answer with the number only, e.g. 12.50.",
+          "right_answer": "39.99",
+          "answer": "39.99",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.6,
+          "error": null
+        },
+        {
+          "id": "c08-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "300417",
+          "answer": "member 300417",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.85,
+          "error": null
+        },
+        {
+          "id": "c08-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.24,
+          "error": null
+        },
+        {
+          "id": "c08-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.26,
+          "error": null
+        },
+        {
+          "id": "c08-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "9 December 2026",
+          "answer": "22 October 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.95,
+          "error": null
+        },
+        {
+          "id": "c09-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.53,
+          "error": null
+        },
+        {
+          "id": "c09-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "explanation",
+          "answer": "explanation",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.36,
+          "error": null
+        },
+        {
+          "id": "c09-amount",
+          "question": "What is the money amount the customer mentions, in pounds? Answer with the number only, e.g. 12.50.",
+          "right_answer": "412.36",
+          "answer": "412.36",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.76,
+          "error": null
+        },
+        {
+          "id": "c09-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "E-7781230",
+          "answer": "E-7781230",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.96,
+          "error": null
+        },
+        {
+          "id": "c09-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "No",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.25,
+          "error": null
+        },
+        {
+          "id": "c09-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "No",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.29,
+          "error": null
+        },
+        {
+          "id": "c09-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "15 December 2026",
+          "answer": "8 February 2027",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.95,
+          "error": null
+        },
+        {
+          "id": "c10-is-complaint",
+          "question": "Is this message a complaint (any expression of dissatisfaction)? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "yes",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.51,
+          "error": null
+        },
+        {
+          "id": "c10-wants",
+          "question": "What does the customer mainly want? Answer with one word from: refund, replacement, repair, apology, compensation, cancellation, explanation.",
+          "right_answer": "repair",
+          "answer": "repair",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.3,
+          "error": null
+        },
+        {
+          "id": "c10-ref",
+          "question": "What is the customer's account, order, policy or job reference? Answer with the reference only.",
+          "right_answer": "66-1043",
+          "answer": "66-1043",
+          "status": "right",
+          "consistent": true,
+          "seconds": 0.81,
+          "error": null
+        },
+        {
+          "id": "c10-escalation",
+          "question": "Does the customer mention the ombudsman, a solicitor or legal action? Answer yes or no.",
+          "right_answer": "yes",
+          "answer": "no",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.27,
+          "error": null
+        },
+        {
+          "id": "c10-vulnerable",
+          "question": "Does the message show signs the customer may be vulnerable (for example bereavement, illness, or money problems)? Answer yes or no.",
+          "right_answer": "no",
+          "answer": "I don't know",
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.54,
+          "error": null
+        },
+        {
+          "id": "c10-deadline",
+          "question": "Under the FCA rule, the final response is due by the end of eight weeks after the complaint was received. What is that date? Answer as D Month YYYY, e.g. 5 March 2026.",
+          "right_answer": "22 December 2026",
+          "answer": "5 December 2026",
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 0.94,
+          "error": null
+        }
+      ]
+    }
+  ]
+}
