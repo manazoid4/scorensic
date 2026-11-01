@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from scorensic.check import is_local, mark, run, self_check, load_sheet
+from scorensic.check import is_local, load_sheet, mark, parse_rules, rule_failures, run, self_check
 from scorensic.cli import main
 
 SHEET = Path(__file__).resolve().parents[1] / "examples" / "business" / "invoices.csv"
@@ -85,3 +85,53 @@ def test_uk_complaints_pack_marking_is_sound():
     tasks = load_sheet(pack)
     caught, total, problems = self_check(tasks)
     assert len(tasks) == 54 and caught == total and problems == []
+
+
+def _rules_task(rules, context=""):
+    return {"id": "t", "prompt": "Write the reply.", "context": context, "reference": rules}
+
+
+def test_rules_marking_needs_every_must_and_no_never():
+    t = _rules_task("rules: must=Financial Ombudsman Service; must=six months|6 months; never=[")
+    assert mark(t, "You may refer this to the Financial Ombudsman Service within 6 months.")
+    assert not mark(t, "You may refer this to the Financial Ombudsman Service.")            # missing a must
+    assert not mark(t, "Financial Ombudsman Service, six months. Signed [Your Name]")       # placeholder
+    assert not mark(t, "I don't know")
+    assert mark(t, "the financial  ombudsman service ... SIX MONTHS")                      # case and spacing
+
+
+def test_rules_match_whole_words_only():
+    t = _rules_task("rules: must=refund; never=no")
+    assert not mark(t, "We have refunded you.")    # 'refund' is not the word 'refunded'
+    assert mark(t, "We will refund you; we know this was annoying.")   # 'know' does not trip never=no
+
+
+def test_bad_rules_are_rejected():
+    with pytest.raises(ValueError):
+        parse_rules("rules: maybe=x")
+    with pytest.raises(ValueError):
+        parse_rules("rules: never=x")
+
+
+def test_rules_self_check_catches_echo():
+    # A rule set the customer's own message already satisfies would pass a model that just copies it back.
+    t = _rules_task("rules: must=4471-B; must=replacement", context="Order 4471-B. Please send a replacement.")
+    caught, total, problems = self_check([t])
+    assert caught < total and any("(context_echo)" in p for p in problems)
+
+
+def test_uk_complaints_letters_marking_is_sound():
+    tasks = load_sheet(Path(__file__).resolve().parents[1] / "packs" / "uk-complaints" / "letters.csv")
+    caught, total, problems = self_check(tasks)
+    assert len(tasks) == 8 and caught == total and not problems
+
+
+def test_rules_card_explains_failures(tmp_path):
+    from scorensic.report import card_html
+    t = _rules_task("rules: must=leaflet")
+    row = {"question": "Q", "right_answer": t["reference"], "answer": "Hello", "status": "wrong", "why": rule_failures(t, "Hello")}
+    res = {"sheet": "s.csv", "endpoint_is_local": True, "endpoint_host": "localhost", "repeats": 1,
+           "marking_check": {"tricks_caught": 1, "tricks_total": 1, "problems": []},
+           "models": [{"model": "m", "right": 0, "wrong": 1, "no_answer": 0, "errors": 0, "total": 1, "consistent": 1,
+                       "avg_seconds": 1, "rows": [row]}]}
+    assert "missing: leaflet" in card_html(res)

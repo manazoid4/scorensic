@@ -20,7 +20,9 @@ uv run scorensic check my-tasks.csv --model qwen3 --model llama3.2              
 uv run scorensic check my-tasks.csv --endpoint https://api.example.com/v1 --model x --key-env MY_API_KEY
 ```
 
-The bundled `examples/business/invoices.csv` is a short, made-up starter sheet. First ready-made pack: [UK complaints handling](packs/uk-complaints/) (54 tasks; spotting complaints, what the customer wants, references, escalation, vulnerability, FCA deadlines).
+The bundled `examples/business/invoices.csv` is a short, made-up starter sheet. First ready-made pack: [UK complaints handling](packs/uk-complaints/): 54 short-answer jobs (spotting complaints, what the customer wants, references, escalation, vulnerability, FCA deadlines) and 8 reply letters marked by must-include / must-never-say rules. [First real-model run](validation/FIRST-REAL-RUN.md): two 3B local models got 0 of 8 deadlines right, and neither wrote one compliant FCA final response.
+
+For letters and emails, write rules instead of one right answer: `rules: must=Financial Ombudsman Service; must=six months|6 months; never=[`.
 
 ## For eval builders: check the grader
 

@@ -68,8 +68,11 @@ def card_html(res):
     cards = []
     for m in res["models"]:
         wrong = "".join(
-            f"<li><b>Q:</b> {escape(r['question'])}<br><b>Right answer:</b> {escape(r['right_answer'])}<br>"
-            f"<b>It said:</b> {escape(r['answer'] or r['error'] or '(nothing)')}</li>"
+            f"<li><b>Q:</b> {escape(r['question'])}<br>"
+            + (f"<b>Broke these rules:</b> {escape('; '.join(r['why']))}<br><details><summary>What it wrote</summary>"
+               f"<pre style=\"white-space:pre-wrap\">{escape(r['answer'])}</pre></details>" if r.get("why") else
+               f"<b>Right answer:</b> {escape(r['right_answer'])}<br><b>It said:</b> {escape(r['answer'] or r['error'] or '(nothing)')}")
+            + "</li>"
             for r in m["rows"] if r["status"] != "right")
         cards.append(f"""<section class="card">
 <h2>{escape(m['model'])}</h2>
@@ -99,7 +102,7 @@ body{{font:17px/1.55 system-ui,sans-serif;max-width:760px;margin:0 auto;padding:
 {''.join(cards)}
 <h2>Can you trust this score?</h2>
 <p>{marking}</p>{f"<ul>{issues}</ul>" if issues else ''}
-<p>Answers only count as right when the whole reply matches your right answer (ignoring capitals, spacing and £ signs, and allowing the same number written differently). A long reply that contains the answer is not counted, so check the "didn't get right" list: some may be fine.</p>
+<p>Answers only count as right when the whole reply matches your right answer (ignoring capitals, spacing and £ signs, and allowing the same number written differently). A long reply that contains the answer is not counted, so check the "didn't get right" list: some may be fine. Written answers (letters, emails) are marked by your rules: everything that must be included, and nothing that must never be said. Rules check wording, not tone, so a person should still read the letters.</p>
 <p style="color:#58615f;font-size:.9rem">Made with Scorensic, open source: github.com/manazoid4/scorensic</p>
 </body></html>
 """

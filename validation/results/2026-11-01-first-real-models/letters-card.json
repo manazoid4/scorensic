@@ -1,0 +1,233 @@
+{
+  "tool": "scorensic check",
+  "sheet": "letters.csv",
+  "endpoint_is_local": true,
+  "endpoint_host": "localhost",
+  "repeats": 2,
+  "marking_check": {
+    "tricks_caught": 118,
+    "tricks_total": 118,
+    "problems": []
+  },
+  "models": [
+    {
+      "model": "qwen2.5:3b",
+      "right": 2,
+      "wrong": 6,
+      "no_answer": 0,
+      "errors": 0,
+      "total": 8,
+      "consistent": 8,
+      "avg_seconds": 22.25,
+      "rows": [
+        {
+          "id": "c01-letter",
+          "question": "The firm is regulated by the FCA. Write the final response letter to this customer. The firm upholds the complaint, will refund the duplicate £84.50 within 5 working days, and does not consent to waive the ombudsman's time limits. The company is Northgate Bank. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Mark|Ellis; must=77120394; must=84.50; must=refund|refunded; must=Financial Ombudsman Service; must=six months|6 months; must=financial-ombudsman.org.uk; must=leaflet; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "Dear Mark Ellis,\n\nThank you for your recent communication regarding the duplicate charges on your September direct debit for account 77120394. We understand your disappointment and appreciate your long-standing relationship with Northgate Bank.\n\nUpon review, we have determined that the duplicate charges were indeed made in error. We sincerely apologize for any inconvenience this may have caused and are pleased to inform you that we will refund the duplicate £84.50 within 5 working days from the date of this letter.\n\nWe also want to assure you that Northgate Bank upholds the complaint and does not consent to waive the ombudsman's time limits. We value your trust in our services and are committed to ensuring that such issues do not occur in the future.\n\nPlease be assured that we have taken steps to review our processes to prevent any similar occurrences in the future. We are here to serve you and we are committed to resolving any issues promptly and efficiently.\n\nThank you for bringing this to our attention. We look forward to continuing our relationship with you.\n\nSincerely,\nAlex Morgan  \nCustomer Relations  \nNorthgate Bank\n\nThis response letter is signed by Alex Morgan, representing the Customer Relations department of Northgate Bank.",
+          "why": [
+            "missing: Financial Ombudsman Service",
+            "missing: six months / 6 months",
+            "missing: financial-ombudsman.org.uk",
+            "missing: leaflet"
+          ],
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 21.37,
+          "error": null
+        },
+        {
+          "id": "c03-letter",
+          "question": "Write the company's reply to this customer. The company is sending a replacement glass shelf free of charge this week. The company is Oakline Furniture. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Raj; must=4471-B; must=replacement; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "Subject: Replacement Glass Shelf for Order 4471-B\n\nDear Raj,\n\nThank you for reaching out to us regarding the issue with your Oakline Furniture order, Order 4471-B. We are sorry to hear that the glass shelf in your cabinet was damaged. We value your business and appreciate your patience.\n\nWe have already arranged for a replacement glass shelf to be sent to you free of charge this week. Please ensure that you provide us with your shipping address so we can send the replacement promptly.\n\nIf you have any further questions or concerns, please do not hesitate to contact us. We are here to assist you.\n\nThank you for choosing Oakline Furniture.\n\nBest regards,\n\nAlex Morgan  \nCustomer Relations  \nOakline Furniture",
+          "why": [],
+          "status": "right",
+          "consistent": true,
+          "seconds": 13.11,
+          "error": null
+        },
+        {
+          "id": "c04-letter",
+          "question": "The firm is regulated by the FCA. Write the final response letter to this customer. The firm upholds the complaint, apologises for not calling back, lists the documents needed to transfer the policy (death certificate and grant of probate), and does not consent to waive the ombudsman's time limits. The company is Harbour Life Insurance. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Margaret|Doyle; must=HX-209931; must=sorry for your loss|condolences|sorry to hear; must=death certificate; must=probate; must=Financial Ombudsman Service; must=six months|6 months; must=financial-ombudsman.org.uk; must=leaflet; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "Dear Margaret Doyle,\nThank you for your recent communication regarding your Policy HX-209931 with Harbour Life Insurance. We understand the difficulties you are currently facing and appreciate your patience and understanding.\nWe are truly sorry for the inconvenience you have experienced in trying to contact us. We regret that we have not been able to reach you in a timely manner. We assure you that we are now actively working on your request to transfer the policy into your name.\nTo proceed with the transfer, we kindly request the following documents:\n1. A copy of your death certificate.\n2. A copy of the grant of probate.\nPlease ensure that these documents are sent to us at the following address: Customer Relations, Harbour Life Insurance, 123 Main Street, City, State, Zip Code.\nWe understand that this process may be challenging for you, and we are committed to assisting you in every way possible. However, we do not consent to waive the ombudsman's time limits. We will ensure that your case is handled promptly and efficiently.\nWe hope that this information is helpful to you. Should you have any further questions or require additional assistance, please do not hesitate to contact us. Our Customer Relations team is available to assist you.\nWe sincerely apologize for any inconvenience caused and assure you that we are doing everything in our power to resolve this matter as quickly as possible.\nYours sincerely,\nAlex Morgan\nCustomer Relations\nHarbour Life Insurance\n123 Main Street\nCity, State, Zip Code\nWe will keep you updated on the progress of your request.\nSincerely,\nAlex Morgan\nCustomer Relations\nHarbour Life Insurance\n123 Main Street\nCity, State, Zip Code",
+          "why": [
+            "missing: sorry for your loss / condolences / sorry to hear",
+            "missing: Financial Ombudsman Service",
+            "missing: six months / 6 months",
+            "missing: financial-ombudsman.org.uk",
+            "missing: leaflet"
+          ],
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 30.77,
+          "error": null
+        },
+        {
+          "id": "c05-letter",
+          "question": "Write the broadband company's reply to this customer. The company apologises and offers £60 compensation for the lost day's pay. The company is Swiftlink Broadband. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Lewis; must=BB-55102; must=60; must=compensation; never=Financial Ombudsman Service; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "From: Alex Morgan, Customer Relations  \nSent: 1 October 2026  \nTo: Lewis, BB-55102  \nSubject: Re: Broadband Outage Complaint\n\nDear Lewis,\n\nI hope this message finds you well. I am writing to formally respond to your recent complaint regarding the broadband outages that have affected your work from home activities.\n\nWe are deeply sorry to hear about the inconvenience and disruption you have experienced due to the outages. We understand the importance of reliable internet connectivity for your professional life, and we are committed to ensuring that you have a stable and uninterrupted service.\n\nAfter reviewing your account, we have determined that the broadband service did indeed experience outages on the days you reported, which resulted in a loss of pay. We sincerely apologize for any inconvenience this has caused and are offering you £60 as compensation for the lost day's pay.\n\nWe take your concerns seriously and are taking steps to improve our service to prevent such outages in the future. We will be conducting a thorough review of our network and service delivery to identify any areas for improvement.\n\nPlease let us know if you would like to proceed with further assistance or if there is anything else we can do to assist you. We value your feedback and are committed to ensuring that your experience with Swiftlink Broadband is positive and satisfactory.\n\nThank you for bringing this to our attention, and we look forward to resolving this matter promptly.\n\nBest regards,\n\nAlex Morgan  \nCustomer Relations  \nSwiftlink Broadband",
+          "why": [],
+          "status": "right",
+          "consistent": true,
+          "seconds": 26.13,
+          "error": null
+        },
+        {
+          "id": "c07-letter",
+          "question": "Write the company's reply to this customer. The company apologises in writing and will pay for the carpet to be cleaned. The company is Brightwell Home Services. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Sophie|Clarke; must=ENG-8812; must=apologise|apologize|apology|sorry; must=carpet; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "From: Alex Morgan, Customer Relations, Brightwell Home Services  \nSent to: Sophie Clarke  \nSent on: 12 October 2026  \nSubject: Apology and Response to Your Complaint\n\nDear Sophie,\n\nI hope this message finds you well. I am writing to formally apologize for the inconvenience and distress caused by our engineer, John Doe, on Tuesday, October 5th. We understand that the situation was not acceptable and we are deeply sorry for any inconvenience or damage caused.\n\nWe have been made aware of the issue and we are taking immediate steps to rectify the situation. We will be sending a professional cleaning team to your home to ensure that the carpet is restored to its original condition. The cost for this service will be covered by us, and we will ensure that the carpet is cleaned thoroughly to your satisfaction.\n\nWe value your feedback and are committed to ensuring that such incidents do not occur in the future. We will be reviewing our procedures and training to prevent similar situations from happening again.\n\nPlease let us know a convenient time for our cleaning team to visit your home. We will do our utmost to accommodate your schedule.\n\nThank you for bringing this to our attention. We appreciate your understanding and patience as we work to resolve this matter.\n\nSincerely,\nAlex Morgan  \nCustomer Relations, Brightwell Home Services\n\nP.S. We have opened an internal investigation into the incident and will be providing you with the results of this investigation in the near future.",
+          "why": [
+            "missing: ENG-8812"
+          ],
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 26.85,
+          "error": null
+        },
+        {
+          "id": "c08-letter",
+          "question": "Write the gym's reply to this customer. The gym has cancelled the membership and stopped all further payments. The company is Peak Fitness. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Dan; must=300417; must=cancelled|canceled; must=payment|payments; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "Subject: Cancellation of Membership and Payment Stopping\n\nDear Dan,\n\nThank you for reaching out to us regarding your concerns about the recent closure of the pool at Peak Fitness and the associated impact on your gym membership.\n\nWe understand your frustration and the inconvenience you have experienced. The pool closure was indeed a significant issue, and we apologize for any inconvenience it may have caused. We have now cancelled your membership and have stopped all further payments to your account.\n\nWe value our members and strive to provide a high-quality experience. However, we believe that in this instance, it is best to move forward and terminate your membership to ensure that we can continue to serve our other valued members.\n\nPlease let us know if you have any questions or concerns regarding this matter. We are here to assist you in any way we can.\n\nSincerely,\n\nAlex Morgan  \nCustomer Relations  \nPeak Fitness",
+          "why": [
+            "missing: 300417"
+          ],
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 14.95,
+          "error": null
+        },
+        {
+          "id": "c09-letter",
+          "question": "Write the energy company's reply to this customer. The company explains the bill was based on an estimated meter reading, asks for an actual reading, and offers a payment plan. The company is Greenfield Energy. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Kerry; must=E-7781230; must=estimate|estimated; must=meter reading; must=payment plan|payment arrangement|instalments; never=Financial Ombudsman Service; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "From: Alex Morgan, Customer Relations  \nSent: 25 October 2026  \nTo: Kerry  \nSubject: Explanation and Payment Plan for Your Energy Bill\n\nDear Kerry,\n\nI hope this message finds you well. I understand the concern you have expressed regarding your recent energy bill, which has risen to £412.36 for the month of October. I am writing to provide you with some clarity and to offer a solution to help manage your current situation.\n\nYour bill has been based on an estimated meter reading, which is common practice when a new customer is first registered. Unfortunately, due to the recent change in your employment status, we have not been able to obtain an actual meter reading from you. This has resulted in an overestimation of your energy usage for the month.\n\nWe are committed to ensuring that your bill is accurate and fair. To rectify this, we kindly request that you provide us with an actual meter reading. Once we have this information, we will adjust your bill accordingly and ensure that you are charged for the correct amount of energy used.\n\nIn the meantime, we would like to offer you a payment plan to help manage your financial situation. We understand that this unexpected increase in your bill has been challenging, and we want to support you during this time. Our payment plan allows you to pay the adjusted amount over a period of 6 months, with a reduced monthly payment.\n\nTo proceed with the payment plan, please provide us with your actual meter reading as soon as possible. We will then finalize the details of the plan and send you a confirmation of your new payment schedule.\n\nWe appreciate your understanding and cooperation in this matter. Your feedback is important to us, and we are here to assist you in any way we can.\n\nPlease do not hesitate to contact me if you have any questions or need further assistance. We are here to help.\n\nBest regards,  \nAlex Morgan  \nCustomer Relations  \nGreenfield Energy",
+          "why": [
+            "missing: E-7781230"
+          ],
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 34.14,
+          "error": null
+        },
+        {
+          "id": "c10-letter",
+          "question": "Write the company's reply to this customer. The company will repair the boiler free of charge, without admitting liability. The company is Brightwell Home Services. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Paul|Hughes; must=66-1043; must=repair; must=free of charge|no charge|no cost|at our cost; never=we admit liability|we accept liability|we were negligent; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "Dear Paul Hughes,\n\nThank you for your email of 27 October 2026 regarding the boiler issue. We understand your concerns and appreciate your patience. We would like to assure you that we will repair the boiler free of charge as per your request. We do not admit liability for any previous issues, as per your solicitor's advice. \n\nWe will ensure that all records are kept as per your instructions. Please let us know the best time for us to schedule the repair. We look forward to resolving this matter promptly.\n\nSincerely,\nAlex Morgan  \nCustomer Relations  \nBrightwell Home Services",
+          "why": [
+            "missing: 66-1043"
+          ],
+          "status": "wrong",
+          "consistent": true,
+          "seconds": 10.64,
+          "error": null
+        }
+      ]
+    },
+    {
+      "model": "llama3.2:3b",
+      "right": 0,
+      "wrong": 0,
+      "no_answer": 8,
+      "errors": 0,
+      "total": 8,
+      "consistent": 8,
+      "avg_seconds": 1.41,
+      "rows": [
+        {
+          "id": "c01-letter",
+          "question": "The firm is regulated by the FCA. Write the final response letter to this customer. The firm upholds the complaint, will refund the duplicate £84.50 within 5 working days, and does not consent to waive the ombudsman's time limits. The company is Northgate Bank. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Mark|Ellis; must=77120394; must=84.50; must=refund|refunded; must=Financial Ombudsman Service; must=six months|6 months; must=financial-ombudsman.org.uk; must=leaflet; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "I don't know",
+          "why": [],
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 5.08,
+          "error": null
+        },
+        {
+          "id": "c03-letter",
+          "question": "Write the company's reply to this customer. The company is sending a replacement glass shelf free of charge this week. The company is Oakline Furniture. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Raj; must=4471-B; must=replacement; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "I don't know",
+          "why": [],
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.86,
+          "error": null
+        },
+        {
+          "id": "c04-letter",
+          "question": "The firm is regulated by the FCA. Write the final response letter to this customer. The firm upholds the complaint, apologises for not calling back, lists the documents needed to transfer the policy (death certificate and grant of probate), and does not consent to waive the ombudsman's time limits. The company is Harbour Life Insurance. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Margaret|Doyle; must=HX-209931; must=sorry for your loss|condolences|sorry to hear; must=death certificate; must=probate; must=Financial Ombudsman Service; must=six months|6 months; must=financial-ombudsman.org.uk; must=leaflet; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "I don't know",
+          "why": [],
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 1.02,
+          "error": null
+        },
+        {
+          "id": "c05-letter",
+          "question": "Write the broadband company's reply to this customer. The company apologises and offers £60 compensation for the lost day's pay. The company is Swiftlink Broadband. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Lewis; must=BB-55102; must=60; must=compensation; never=Financial Ombudsman Service; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "I don't know",
+          "why": [],
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.93,
+          "error": null
+        },
+        {
+          "id": "c07-letter",
+          "question": "Write the company's reply to this customer. The company apologises in writing and will pay for the carpet to be cleaned. The company is Brightwell Home Services. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Sophie|Clarke; must=ENG-8812; must=apologise|apologize|apology|sorry; must=carpet; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "I don't know",
+          "why": [],
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.8,
+          "error": null
+        },
+        {
+          "id": "c08-letter",
+          "question": "Write the gym's reply to this customer. The gym has cancelled the membership and stopped all further payments. The company is Peak Fitness. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Dan; must=300417; must=cancelled|canceled; must=payment|payments; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "I don't know",
+          "why": [],
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.83,
+          "error": null
+        },
+        {
+          "id": "c09-letter",
+          "question": "Write the energy company's reply to this customer. The company explains the bill was based on an estimated meter reading, asks for an actual reading, and offers a payment plan. The company is Greenfield Energy. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Kerry; must=E-7781230; must=estimate|estimated; must=meter reading; must=payment plan|payment arrangement|instalments; never=Financial Ombudsman Service; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "I don't know",
+          "why": [],
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.87,
+          "error": null
+        },
+        {
+          "id": "c10-letter",
+          "question": "Write the company's reply to this customer. The company will repair the boiler free of charge, without admitting liability. The company is Brightwell Home Services. Sign it from Alex Morgan, Customer Relations.",
+          "right_answer": "rules: must=Paul|Hughes; must=66-1043; must=repair; must=free of charge|no charge|no cost|at our cost; never=we admit liability|we accept liability|we were negligent; must=Alex Morgan; never=[|{|as an ai|language model",
+          "answer": "I don't know",
+          "why": [],
+          "status": "no_answer",
+          "consistent": true,
+          "seconds": 0.86,
+          "error": null
+        }
+      ]
+    }
+  ]
+}
